@@ -36,11 +36,11 @@ jobs:
           -var="private_key=$PRIVATE_SSH_KEY" \
           -var="key_name=deployer-key" \
           -out=PLAN
-        working-directory: /terraform
+        working-directory: ./terraform
       - name: Terraform Apply
         id: apply
         run: terraform apply PLAN
-        working-directory: /terraform
+        working-directory: ./terraform
       - name: Set output
         id: set-ip
         run: |-
